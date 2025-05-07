@@ -4,7 +4,7 @@ export const isInCart = (product, cartItems) => {
   return cartItems.find(item => item.id === product.id);
 }
 
-const API = 'http://localhost:8080';
+const API = process.env.REACT_APP_SERVER_URL;
 
 export async function fetchFromAPI(endpoint, opts) {
   const { method, body } = { method: 'POST', body: null, ...opts };
